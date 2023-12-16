@@ -1,8 +1,20 @@
-[![Django x Tailwindcss Logo](https://static.codingforentrepreneurs.com/media/courses/django-x-tailwindcss/fe3c3349-45a1-4e18-a60c-9b70c6565de5.jpg)](https://www.codingforentrepreneurs.com/courses/django-x-tailwindcss/)
-
 # Django x Tailwindcss
 
 Learn how to integrate Tailwind.css into your Django projects.
+
+## Installation Steps
+
+- Create an env with python -m venv venv
+    - source /venv/bin/activate 
+    - Install python packages with: pip install -r src/requirements.txt
+- Install nodejs
+    - Install tailwind with npm install -D tailwindcss
+    - npx tailwindcss init
+
+## Running Steps
+- npm run dev
+- python src/manage.py runserver
+
 
 Tailwind is a paradigm shift for how you'll use CSS in your _all_ of your web applications and Django projects.  Instead of using classes like `btn-primary` you'll use a list of more robust classes to describe how you want your element to render. Such as:
 
