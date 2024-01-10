@@ -1,3 +1,4 @@
+{% load compress %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +9,17 @@
     <title>{% block head_title %}CFE Home{% endblock %}</title>
     {% include 'head/css.html' %}
     {% include 'head/js.html' %}
+    
+    {% compress css %}
+        <link rel="stylesheet" href="{% static 'css/cfehome-ui.css' %}">
+    {% endcompress %}
+
 </head>
 <body>
     <div>
+        {% include 'head/navbar.html' %}
         {% block content %}{% endblock %}
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 </html>
