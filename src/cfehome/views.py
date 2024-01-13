@@ -11,5 +11,10 @@ def home_view(request):
             ]},
         {"title": "Campanhas"},
     ]
-    context = {"items": items}
+    
+    html_markdown = {
+        "text": "#Teste String\n##Segundo Titulo",
+        "title": "Hello World"
+    }
+    context = {"items": items, "doc": html_markdown}
     return render(request, "pages/home.html", context)
