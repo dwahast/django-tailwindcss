@@ -1,5 +1,4 @@
-src/static/CACHE/*
-
+src/static/CACHE/**
 .DS_Store
 local-cdn/
 

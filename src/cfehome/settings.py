@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'markdown_deux',
     "django_htmx",
     "template_partials",
+    "guidelines",
 ]
 
 MIDDLEWARE = [
@@ -128,14 +129,13 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR.parent / "local-cdn" / "static"
-# STATIC_ROOT = os.path.join(str(BASE_DIR.parent), "local-cdn", "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-COMPRESS_ROOT = BASE_DIR / 'static'
+COMPRESS_ROOT = BASE_DIR / "static"
 
 COMPRESS_ENABLED = True
 
