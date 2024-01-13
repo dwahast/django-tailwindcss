@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block head_title %}CFE Home{% endblock %}</title>
-    {% include 'head/css.html' %}
-    {% include 'head/js.html' %}
+    {% include 'utils/head/css.html' %}
+    {% include 'utils/head/js.html' %}
     
     {% compress css %}
         <link rel="stylesheet" href="{% static 'css/cfehome-ui.css' %}">
@@ -17,7 +17,7 @@
 </head>
 <body>
     <div>
-        {% include 'head/navbar.html' %}
+        {% include 'components/navbar/navbar.html' %}
         {% block content %}{% endblock %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
