@@ -22,7 +22,7 @@
                         <ul id="dropdown-example" class="hidden py-2 space-y-2">
                             {% for i2 in item.childs %}
                                 <li>
-                                    <a href="{{i2.link}}" class="text-sm flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{i2.title}}</a>
+                                    <button hx-get="{% url 'home' %}" hx-target="#documentContent" hx-swap="outerHTML" class="text-sm flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{i2.title}}</button>
                                 </li>
                             {% endfor %}
                         </ul>

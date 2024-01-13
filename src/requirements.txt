@@ -2,8 +2,10 @@ asgiref==3.7.2
 Django==4.1.13
 django-appconf==1.0.6
 django-compressor==4.4
+django-htmx==1.17.2
 django-markdown-deux==1.0.6
 django-pagedown==2.2.1
+django-template-partials==23.4
 markdown2==2.4.12
 pillow==10.2.0
 rcssmin==1.1.1
