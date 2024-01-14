@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def home_view(request):
      
-    print("Fui chamado")
+    print("Home")
     if request.htmx:
         html_markdown = {
             "text": "#FUNCIONAAAAA",
