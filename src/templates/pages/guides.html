@@ -10,7 +10,9 @@
 {% endpartialdef %}
 
 {% block content %}
-   <div class="mt-10 p-4">
+
+   {% include 'components/sidebar/sidebar.html' with items=items%}
+   <div class="mt-10 p-4 sm:ml-64">
       {% include 'components/drawer/drawer.html' %}
       {% partial document-content %}
    </div>

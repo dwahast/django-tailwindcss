@@ -32,29 +32,38 @@ def mapping_folders(folder):
     
     return mapping_folder
 
-def folder_view(request):
-    # mapping_tree_folder = {}
+def documents_view(request):
     guideline = Guideline.objects.get(title="Processadora Guideline")
     items = mapping_folders(guideline.folder)
-    print(items)
-    
     if request.htmx:
-        html_markdown = {
-            "text": "# Eita. HTMX! ",
-            "title": "Hello World"
-        }
-        context = {"items": items, "doc": html_markdown}
-        return render(request, "pages/home.html#document-content", context)
+        html_markdown = Document.objects.get(id=1)
+        context = {"items": items[0]["children"], "doc": html_markdown}
+        return render(request, "pages/guides.html#document-content", context)
     else:
-        
         html_markdown = {
             "text": "# Visão Geral",
             "title": "Adicionar uma nova tabela indicando qual documento é o principal"
         }
         # TODO: Adicionar uma nova profundidade na sidebar. Ajustar botoes e htmx
         context = {"items": items[0]["children"], "doc": html_markdown}
-        return render(request, "pages/home.html", context)
+        return render(request, "pages/guides.html", context)
     
-def document_view(request):
-    context = {}
-    return render(request, "pages/home.html", context)
+def document_view(request, documentId):
+    guideline = Guideline.objects.get(title="Processadora Guideline")
+    items = mapping_folders(guideline.folder)
+    if request.htmx:
+        html_markdown = {
+            "text": Document.objects.get(id=documentId).content,
+            "title": "Colchão"
+        }
+        print(html_markdown)
+        context = {"items": items[0]["children"], "doc": html_markdown}
+        return render(request, "pages/guides.html#document-content", context)
+    else:
+        html_markdown = {
+            "text": "# Visão Geral",
+            "title": "Adicionar uma nova tabela indicando qual documento é o principal"
+        }
+        # TODO: Adicionar uma nova profundidade na sidebar. Ajustar botoes e htmx
+        context = {"items": items[0]["children"], "doc": html_markdown}
+    return render(request, "pages/guides.html", context)
