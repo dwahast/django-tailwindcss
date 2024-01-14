@@ -20,6 +20,10 @@
                         <ul id="{{item.title}}" class="hidden py-2 space-y-2">
                             {% for i2 in item.children %}
                                 <li>
+                                    <!-- Something like hx-get="{% url 'documents/{i2.document.id}' %}" -->
+                                    <!-- Criar view para documents -->
+                                    <!-- Criar template paras as páginas -->
+                                    <!-- Possibilitar andar pelas páginas -->
                                     <button hx-get="{% url 'home' %}" hx-target="#documentContent" hx-swap="outerHTML" class="text-sm flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{i2.title}}</button>
                                 </li>
                             {% endfor %}
