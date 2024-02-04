@@ -1,12 +1,13 @@
  <aside id="logo-sidebar" class="fixed top-8 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <!-- drawer init and toggle -->
-        <div class="text-center">
+        {% comment %} <div class="text-center">
             <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example">
             Show right drawer
             </button>
-        </div>
+        </div> {% endcomment %}
         <!-- Sidebar List Generator -->
+        <div class="text-gray-900 dark:text-white text-lg mb-3">{{guideline}}</div>
         <ul class="space-y-2 font-medium">
             {% for item in items %}
                 {% if item.has_child %}
@@ -20,10 +21,8 @@
                         <ul id="{{item.title}}" class="hidden py-2 space-y-2">
                             {% for i2 in item.children %}
                                 <li>
-                                    <!-- Criar view para documents -->
-                                    <!-- Criar template paras as páginas -->
-                                    <!-- Possibilitar andar pelas páginas -->
-                                    <button hx-get={% url 'document' i2.document %} hx-target="#documentContent" hx-swap="outerHTML" class="text-sm flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{i2.title}}</button>
+                                    {% comment %} <button hx-get={% url 'document' i2.document %} hx-target="#documentContent" hx-swap="outerHTML" class="text-sm flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{i2.title}}</button> {% endcomment %}
+                                    <a href="/guidelines/documents/{{i2.document}}" class="text-sm flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{i2.title}}</a>
                                 </li>
                             {% endfor %}
                         </ul>

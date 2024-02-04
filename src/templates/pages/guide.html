@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load partials %}
+{% load markdown_deux_tags %} 
+
+{% partialdef document-content %}
+   
+   <div id="documentContent" class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2">
+      {{ doc.text | markdown }}
+   </div>
+{% endpartialdef %}
+
+{% block content %}
+
+   {% include 'components/sidebar/sidebar.html' with items=items%}
+   <div class="mt-12 p-4 sm:ml-64">
+      {% comment %} {% include 'components/drawer/drawer.html' %} {% endcomment %}
+      <h1 class="mt-10 p-2" >{{doc.title}}</h1>
+      {% partial document-content %}
+   </div>
+
+{% endblock %}
