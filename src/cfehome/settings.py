@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     "markdown_deux",
     "django_htmx",
     "template_partials",
-    # "rest_framework_swagger",
     "guidelines",
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

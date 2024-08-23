@@ -1,0 +1,33 @@
+swagger: '2.0'
+info:
+  title: Snippets API
+  description: Test description
+  version: v1
+schemes:
+- http
+basePath: /
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  Basic:
+    type: basic
+security:
+- Basic: []
+paths:
+  /swaggeASDAr/:
+    get:
+      operationId: swagger_lisasdt
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      produces:
+      - application/coreapi+json
+      - application/openapi+json
+      tags:
+      - swaggerasd
+    parameters: []
+definitions: {}

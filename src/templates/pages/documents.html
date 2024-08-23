@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% load partials %}
 {% load markdown_deux_tags %} 
@@ -6,25 +7,27 @@
 {% partialdef document-content %}
    
     <div id="documentContent" class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2">
-        {{ doc.text | markdown }}
-        {% comment %} Handle OpenAPI models {% endcomment %}
-        {% comment %} <div id="swagger-ui"></div>
-        <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+        <div id="swagger-ui"></div>
+
+        <script src="{% static 'css/swagger-ui-bundle.js' %}"></script>
+        <script src="{% static 'css/swagger-ui-standalone-preset.js' %}"></script>
+
         <script>
+            window.onload = function() {
             const ui = SwaggerUIBundle({
-                url: "{% url 'schema' %}",
+                url: "{% static 'swagger/swagger.yml' %}", // spec attrib can be used to pass open api data to render
                 dom_id: '#swagger-ui',
                 presets: [
                     SwaggerUIBundle.presets.apis,
-                    SwaggerUIBundle.SwaggerUIStandalonePreset
-                ],
-                layout: "BaseLayout",
-                requestInterceptor: (request) => {
-                    request.headers['X-CSRFToken'] = "{{ csrf_token }}"
-                    return request;
-                }
+                    SwaggerUIStandalonePreset
+                ]
             })
-        </script> {% endcomment %}
+
+            window.ui = ui
+            }
+        </script>
+        {{ doc.text | markdown }}
+
     </div>
 {% endpartialdef %}
 
