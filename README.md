@@ -1,3 +1,29 @@
+# Possiveis nomes
+1. MyDock
+2. Doca
+3. Guidelines
+
+# Similar Companies/Ideas
+https://developers.notion.com/reference/intro
+https://docs.gusto.com/embedded-payroll/docs/introduction
+https://readme.com/
+https://swagger.io/
+https://bump.sh/
+
+
+
+# Introduction
+Esse projeto tem por intuito satisfazer uma necessidade de pequenas empresas em solucionar de forma fácil o gerenciamento de APIs, i.e. gerenciar a Especificação da API, o manual, e suas versões.
+Além disso podendo trazer mais funcionalidades dentro do contexto. Como:
+1. Intermediar a comunicação do cliente com o provedor do serviço (um chat)
+2. Utilizar de IA para pesquisas e respostas rápidas. (um chat de IA ou um personagem distinto, em paralelo com uma conversa real)
+3. Simplificar a visualização dos produtos possíveis e contratados. Assim uma tela de login, junto de um gerencial dos serviços contratados. Bem comum em sites de ferramentas, mas trazido a nível de empresas B2B. Onde o desenvolvedor sofre com problemas de copmunicação.
+4. Em algum momento distante possibilitar a visualização de custos e pagamentos do serviço.
+5. Visualização de uso da API
+6. Plataforma para multiplas empresas encontrarem APIs de outras empresas
+7. Inicialmente uma página para empresas sustentarem APIs para seus clientes de forma mais simples, rápida e barata
+
+
 # Django x Tailwindcss
 
 Learn how to integrate Tailwind.css into your Django projects.
@@ -13,8 +39,13 @@ Learn how to integrate Tailwind.css into your Django projects.
 
 ## Running Steps
 - npm run dev
+- source venv/bin/activate
 - python src/manage.py runserver
 
+## Limpar a base de dados
+- python src/manage.py flush
+
+## Criar usuario admin
 
 Tailwind is a paradigm shift for how you'll use CSS in your _all_ of your web applications and Django projects.  Instead of using classes like `btn-primary` you'll use a list of more robust classes to describe how you want your element to render. Such as:
 
