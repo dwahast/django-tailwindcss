@@ -9,6 +9,9 @@ https://docs.gusto.com/embedded-payroll/docs/introduction
 https://readme.com/
 https://swagger.io/
 https://bump.sh/
+https://developer.brex.com/openapi/budgets_api/#operation/updateBudget
+https://redocly.com/blog/redocly-tools-better-openapi-development?utm_content=271082760&utm_medium=social&utm_source=linkedin&hss_channel=lcp-18579254
+https://redocly.com/customers
 
 
 
